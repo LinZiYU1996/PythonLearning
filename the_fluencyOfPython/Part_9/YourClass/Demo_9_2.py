@@ -42,6 +42,20 @@ class Vector2d:
         return bool(abs(self))
 
 
+
+# ❶ Vector2d 实例的分量可以直接通过属性访问（无需调用读值方法）。
+# ❷ Vector2d 实例可以拆包成变量元组。
+# ❸ repr 函数调用 Vector2d 实例，得到的结果类似于构建实例的源码。
+# ❹ 这里使用 eval 函数，表明 repr 函数调用 Vector2d 实例得到的是对构造方法的准确
+# 表述。
+# 这里使用 eval 函数克隆对象是为了说明 repr 方法。使用 copy.copy 函数克隆实例更安全也更快速。
+# ❺ Vector2d 实例支持使用 == 比较；这样便于测试。
+# ❻ print 函数会调用 str 函数，对 Vector2d 来说，输出的是一个有序对。
+# ❼ bytes 函数会调用 __bytes__ 方法，生成实例的二进制表示形式。
+# ❽ abs 函数会调用 __abs__ 方法，返回 Vector2d 实例的模。
+# ❾ bool 函数会调用 __bool__ 方法，如果 Vector2d 实例的模为零，返回 False，否则
+# 返回 True。
+
 v1 = Vector2d(3,4)
 print(v1.x,v1.y)
 # >>>
